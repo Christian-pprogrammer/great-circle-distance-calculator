@@ -1,3 +1,4 @@
+
 import math
 import json
 from operator import itemgetter
@@ -14,7 +15,7 @@ def getPartners(fileName):
     
 
 def calculateDistance(x1, x2, y1, y2):
-    d = 6371.01 * math.acos(math.sin(x1) * math.sin(x2) + math.cos(x1) * math.cos(x2) * math.cos(y1 - y2))
+    d = 6371.01 * math.acos(math.sin(math.radians(x1)) * math.sin(math.radians(x2)) + math.cos(math.radians(x1)) * math.cos(math.radians(x2)) * math.cos(abs(math.radians(y1) - math.radians(y2))))
     return d
 
 partners = getPartners("partners.txt")
